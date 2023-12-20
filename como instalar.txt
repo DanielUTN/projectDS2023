@@ -17,3 +17,19 @@ python.exe -m pip install --upgrade pip
 pip install -r requirements20dic2023.txt
 
 python manage.py runserver
+
+luego en  la ruta /facilisto_store/settings.py
+
+buscar la parte donde dice:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tiendads2023', #nombre de la base de datos
+        'USER': 'postgres', #usuario del postgresql al instalar el programa
+        'PASSWORD': 'pandi',
+        'HOST': 'localhost',# esto queda igual
+        'PORT': '5432', # tambien igual
+    }
+}
+
+son los datos para la base de datos postgre... pueden ponerles lo mismo o cambiar, como gusten.
