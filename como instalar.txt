@@ -1,0 +1,19 @@
+Para correr el proyecto:
+
+-ejecutar el git bash
+-comando: git clone "url repositorio" seria asi
+git clone https://github.com/DanielUTN/projectDS2023.git
+
+-se descarga el proyecto y lo abren en el VScode
+
+-se instala el entorno virtual --comando : python -m venv env
+
+luego los comandos:
+
+.\env\Scripts\activate
+
+python.exe -m pip install --upgrade pip
+
+pip install -r requirements20dic2023.txt
+
+python manage.py runserver
