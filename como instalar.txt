@@ -14,7 +14,7 @@ luego los comandos:
 
 python.exe -m pip install --upgrade pip
 
-pip install -r requirements20dic2023.txt
+pip install -r requirements2023-26Dic.txt
 
 python manage.py runserver
 
@@ -31,5 +31,58 @@ DATABASES = {
         'PORT': '5432', # tambien igual
     }
 }
+
+#######IMPORTANTE#################
+SI NO LOGRAN HACERLO ANDAR CON SU POSTGRE SQL, EJECUTENLO CON EL SQLITE3.
+seguir los siguientes pasos:
+
+en el archivo settings.py linea 95 donde esta lo siguiente:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tiendads2023', #nombre de la base de datos
+        'USER': 'postgres', #usuario del postgresql al instalar el programa
+        'PASSWORD': 'pandi',
+        'HOST': 'localhost',# esto queda igual
+        'PORT': '5432', # tambien igual
+    }
+}
+
+lo comentan. Guardan (contrl + S)
+
+Luego descomentan de la linea 88 a 93 donde dice:
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
+guardan controls + S.
+
+Ejecutan el comando
+python manage.py migrate
+
+esperan a que termine y tiene que dar  todo OK y les crea un archivo sqlite3
+
+ejecutan de nuevo python manage.py runserver
+y deberia de andar pero esta vez sin postgresql.
+
+
+
+######CREAR SUPER USUARIO###########
+ejecutar:
+python manage.py createsuperuser
+
+les pide nombre, email , pass. crean datos siemples
+
+luego en el navegador van a:
+http://127.0.0.1:8000/admin/
+
+y pueden subir productos en la parte de Products. Y tambien crear usuarios borrarlos.
+Tiene todo el control del proyecto.
+
+
+
 
 son los datos para la base de datos postgre... pueden ponerles lo mismo o cambiar, como gusten.
